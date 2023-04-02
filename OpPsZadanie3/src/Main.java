@@ -17,7 +17,7 @@ public class Main {
             this.y = y;
         }
 
-        // konstruktor kopiujący, chuj wie o co chodzi
+        // konstruktor kopiujący
     }
 
     public static class Section {
@@ -34,7 +34,7 @@ public class Main {
             this.pointB = pointB;
         }
 
-        // głęboki konstruktor kopiujący, głębokie to ty masz gardło debilu
+        // głęboki konstruktor kopiujący
     }
 
     public static class Circle {
@@ -60,6 +60,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
+
+        System.out.println("Hello Github!");
 
         Scanner scanner = new Scanner(System.in);
         String opcja;
