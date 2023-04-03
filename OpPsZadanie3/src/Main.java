@@ -58,7 +58,10 @@ public class Main {
             this.promien = promien;
         }
 
-        // głęboki konstruktor
+        public Circle(Circle other) {
+            this.x = other.x;
+            this.y = other.y;
+        }
     }
 
     public static class Picture {
