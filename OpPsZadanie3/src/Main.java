@@ -1,6 +1,8 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
+        //main zaczyna się tutaj
 public class Main {
 
     public static class Point {
