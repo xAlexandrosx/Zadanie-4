@@ -17,7 +17,10 @@ public class Main {
             this.y = y;
         }
 
-        // konstruktor kopiujący
+        public Point(Point other) {
+            this.x = other.x;
+            this.y = other.y;
+        }
     }
 
     public static class Section {
@@ -34,7 +37,10 @@ public class Main {
             this.pointB = pointB;
         }
 
-        // głęboki konstruktor kopiujący
+        public Section(Section other) {
+            this.pointA = other.pointA;
+            this.pointB = other.pointB;
+        }
     }
 
     public static class Circle {
@@ -52,7 +58,10 @@ public class Main {
             this.promien = promien;
         }
 
-        // głęboki konstruktor
+        public Circle(Circle other) {
+            this.x = other.x;
+            this.y = other.y;
+        }
     }
 
     public static class Picture {
@@ -68,14 +77,12 @@ public class Main {
 
         do {
             opcja = "";
-            System.out.println(
-                    "1 Dodaj do obrazu\n2 Wyświetl Obraz\n3 Przesuń Obraz\n4 Wyświetl Sumę Pól\nw Wyjdź\nWybierz>");
+            System.out.println("1 Dodaj do obrazu\n2 Wyświetl Obraz\n3 Przesuń Obraz\n4 Wyświetl Sumę Pól\nw Wyjdź\nWybierz>");
             try {
                 opcja = scanner.nextLine();
             } catch (InputMismatchException e) {
                 System.out.println("Brak Opcji");
             }
-
             switch (opcja) {
                 case "1":
                     opcja = "";
