@@ -22,14 +22,17 @@ public class Main {
             this.y = other.y;
         }
 
-        public Point move(double dx, double dy){
-            //metoda move
+        public void move(double dx, double dy) {
+            x+=dx; y+=dy;
         }
+
+        @Override
         public String toString(){
-            //metoda toString
+            return "("+x+","+y+")";
         }
+
         public double getArea(){
-            //metoda getArea
+            return 0;
         }
     }
 
@@ -51,14 +54,17 @@ public class Main {
             this.pointA = other.pointA;
             this.pointB = other.pointB;
         }
-        public Section move(double dx, double dy){
-            //metoda move
+        public move(double dx, double dy){
+            pointA.move(dx, dy);
+            pointB.move(dx, dy);
         }
+
+        @Override
         public String toString(){
-            //metoda toString
+            return pointA+"-"+pointB;
         }
         public double getArea(){
-            //metoda getArea
+            return 0;
         }
     }
 
@@ -81,14 +87,18 @@ public class Main {
             this.x = other.x;
             this.y = other.y;
         }
-        public Circle move(double dx, double dy){
-            //metoda move
+
+        public void move(double dx, double dy) {
+            srodek.move(dx, dy);
         }
-        public String toString(){
-            //metoda toString
+
+        @Override
+        public String toString() {
+            return "Circle(center=" + center + ", radius=" + radius + ")";
         }
+
         public double getArea(){
-            //metoda getArea
+            return this.promien*this.promien*3.1415;
         }
     }
 
@@ -181,27 +191,24 @@ public class Main {
                     }
                     switch (opcja) {
                         case "1":
-                        //dodaj punkt
+                            //dodaj punkt
                             break;
                         case "2":
-                        //dodaj odcinek
+                            //dodaj odcinek
                             break;
                         case "3":
-                        //dodaj okrąg
+                            //dodaj okrąg
                             break;
                     }
                     break;
                 case "2":
-                //Wyświetl obraz
+                    //Wyświetl obraz
                     break;
                 case "3":
-                //przesuń obraz
+                    //przesuń obraz
                     break;
-                 case "4":
-                 //Wyświetl sumę
-                    break;
-                default:
-                    System.out.println("Brak opcji");
+                case "4":
+
                     break;
             }
         } while (!"w".equals(opcja));
