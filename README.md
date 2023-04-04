@@ -7,7 +7,7 @@ Makulewski > Klasa Picture zawierająca 3 kolekcje (listy lub tablice) obiektów
 
 Każda z 4 klas powinna mieć:
 
-Metodę 'move(double dx, double dy)', która przesuwa pozycję obiektu o zadany wektor <dx,dy>; w klasach składających się z obiektów innych klas powinna ona wywoływać metody 'move' swoich obiektów składowych.
+Kozłowski > Metodę 'move(double dx, double dy)', która przesuwa pozycję obiektu o zadany wektor <dx,dy>; w klasach składających się z obiektów innych klas powinna ona wywoływać metody 'move' swoich obiektów składowych.
 
 Metodę 'String toString()' zwracające tekstową reprezentację danego obiektu, przy czym w klasach składających się z obiektów innych klas powinna ona wywoływać metody 'toString' swoich obiektów składowych.
 
