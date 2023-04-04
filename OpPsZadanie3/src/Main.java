@@ -92,8 +92,23 @@ public class Main {
         }
     }
 
+    //Klasa Picture zawierająca 3 kolekcje (listy lub tablice) obiektów 1,2,3
+    // oraz metody umożliwiające dodawanie nowych obiektów do kolekcji.
     public static class Picture {
 
+        public Point pointList[];
+        public Section sectionList[];
+        public Circle circleList[];
+        int pointCell, sectionCell, circleCell=0;
+        public Picture(){
+            this.pointCell = 0;
+            this.sectionCell = 0;
+            this.circleCell = 0;
+        }
+        public void addPoint(Point newPoint){
+            this.pointList[pointCell] = newPoint;
+            pointCell++;
+        }
         public Picture move(double dx, double dy){
             //metoda move
         }
