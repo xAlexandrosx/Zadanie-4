@@ -12,4 +12,4 @@ Metodę 'String toString()' zwracające tekstową reprezentację danego obiektu,
 
 Metodę 'getArea()', która zwraca pole danego elementu (0 dla Point i Section), w przypadku klasy Picture zwracana wartość to suma pól obiektów w obrazie.
 
-W programie zaimplementuj proste menu, które pozwala na: dodawanie punktów/odcinków/okręgów do obiektu obrazu (Picture), wyswietlanie obiektu Picture (każdy element w postaci tekstowej w osobnej linii), przesuwanie całego obrazu (wszystkich obiektów w obrazie) o zadany wektor dx,dy, wyświetlanie sumy pól wszystkich obiektów w obrazie.
+Kozłowski > W programie zaimplementuj proste menu, które pozwala na: dodawanie punktów/odcinków/okręgów do obiektu obrazu (Picture), wyswietlanie obiektu Picture (każdy element w postaci tekstowej w osobnej linii), przesuwanie całego obrazu (wszystkich obiektów w obrazie) o zadany wektor dx,dy, wyświetlanie sumy pól wszystkich obiektów w obrazie.
