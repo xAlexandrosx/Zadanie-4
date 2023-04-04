@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76093520-6e3b-431d-b792-e8b232afb0a9" name="Changes" comment="Commitment4Life">
+    <list default="true" id="76093520-6e3b-431d-b792-e8b232afb0a9" name="Changes" comment="Rozpoczęto tworzenie klasy Picture">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpPsZadanie3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpPsZadanie3/src/Main.java" afterDir="false" />
     </list>
@@ -24,17 +24,44 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2NvSIv7UYXOwtAAhhjqKlYl9hVS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/jimma/Desktop/Zadanie-3/OpPsZadanie3"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="public class Main" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="public class Main" />
+      <module name="Zadanie-3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/OpPsZadanie3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680624361340</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Rozpoczęto tworzenie klasy Picture">
+      <created>1680626673211</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680626673211</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -75,6 +109,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commitment4Life" />
     <MESSAGE value="Merging move_name into main_clone" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merging move_name into main_clone" />
+    <MESSAGE value="Rozpoczęto tworzenie klasy Picture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rozpoczęto tworzenie klasy Picture" />
   </component>
 </project>

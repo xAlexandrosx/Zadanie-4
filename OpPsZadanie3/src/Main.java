@@ -109,14 +109,49 @@ public class Main {
             this.pointList[pointCell] = newPoint;
             pointCell++;
         }
-        public Picture move(double dx, double dy){
-            //metoda move
+        public void addSection(Point newSection){
+            this.pointList[sectionCell] = newSection;
+            sectionCell++;
         }
+        public void addCircle(Point newCircle){
+            this.circleList[circleCell] = newCircle;
+            circleCell++;
+        }
+        public Picture move(double dx, double dy){
+            for(int i = 0; i<=pointCell; i++){
+                pointList[i].move(dx, dy);
+            }
+            for(int i = 0; i<=sectionCell; i++){
+                sectionList[i].move(dx, dy);
+            }
+            for(int i = 0; i<=circleCell; i++){
+                circleList[i].move(dx, dy);
+            }
+        }
+        @Override
         public String toString(){
-            //metoda toString
+            for(int i = 0; i<=pointCell; i++){
+                pointList[i].toString();
+            }
+            for(int i = 0; i<=sectionCell; i++){
+                sectionList[i].toString();
+            }
+            for(int i = 0; i<=circleCell; i++){
+                circleList[i].toString();
+            }
         }
         public double getArea(){
-            //metoda getArea
+            double areaSum = 0;
+            for(int i = 0; i<=pointCell; i++){
+                areaSum += pointList[i];
+            }
+            for(int i = 0; i<=sectionCell; i++){
+                areaSum += sectionList[i];
+            }
+            for(int i = 0; i<=circleCell; i++){
+                areaSum += circleList[i];
+            }
+            return areaSum;
         }
     }
 
