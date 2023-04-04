@@ -4,15 +4,15 @@ import java.util.Scanner;
 public class Main {
 
     public static class Point {
-        private int x;
-        private int y;
+        private double x;       // int na double
+        private double y;       // int na double
 
         public Point() {
             this.x = 0;
             this.y = 0;
         }
 
-        public Point(int x, int y) {
+        public Point(double x, double y) {      // int na double
             this.x = x;
             this.y = y;
         }
@@ -21,18 +21,28 @@ public class Main {
             this.x = other.x;
             this.y = other.y;
         }
+
+        public Point move(double dx, double dy){
+            //metoda move
+        }
+        public String toString(){
+            //metoda toString
+        }
+        public double getArea(){
+            //metoda getArea
+        }
     }
 
     public static class Section {
-        private int pointA;
-        private int pointB;
+        private Point pointA;      // int na Point
+        private Point pointB;      // int na Point
 
         public Section() {
             this.pointA = 0;
             this.pointB = 0;
         }
 
-        public Section(int pointA, int pointB) {
+        public Section(Point pointA, Point pointB) {      // int na Point
             this.pointA = pointA;
             this.pointB = pointB;
         }
@@ -41,11 +51,20 @@ public class Main {
             this.pointA = other.pointA;
             this.pointB = other.pointB;
         }
+        public Section move(double dx, double dy){
+            //metoda move
+        }
+        public String toString(){
+            //metoda toString
+        }
+        public double getArea(){
+            //metoda getArea
+        }
     }
 
     public static class Circle {
 
-        private int srodek;
+        private Point srodek;   // int na Point
         private double promien;
 
         public Circle() {
@@ -53,7 +72,7 @@ public class Main {
             this.promien = 0;
         }
 
-        public Circle(int srodek, double promien) {
+        public Circle(Point srodek, double promien) {
             this.srodek = srodek;
             this.promien = promien;
         }
@@ -62,10 +81,28 @@ public class Main {
             this.x = other.x;
             this.y = other.y;
         }
+        public Circle move(double dx, double dy){
+            //metoda move
+        }
+        public String toString(){
+            //metoda toString
+        }
+        public double getArea(){
+            //metoda getArea
+        }
     }
 
     public static class Picture {
 
+        public Picture move(double dx, double dy){
+            //metoda move
+        }
+        public String toString(){
+            //metoda toString
+        }
+        public double getArea(){
+            //metoda getArea
+        }
     }
 
     public static void main(String[] args) {
