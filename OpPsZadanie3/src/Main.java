@@ -1,8 +1,6 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-
-        //main zaczyna się tutaj
 public class Main {
 
     public static class Point {
@@ -96,16 +94,27 @@ public class Main {
                     }
                     switch (opcja) {
                         case "1":
+                        //dodaj punkt
                             break;
                         case "2":
+                        //dodaj odcinek
                             break;
                         case "3":
+                        //dodaj okrąg
                             break;
                     }
                     break;
                 case "2":
+                //Wyświetl obraz
                     break;
                 case "3":
+                //przesuń obraz
+                    break;
+                 case "4":
+                 //Wyświetl sumę
+                    break;
+                default:
+                    System.out.println("Brak opcji");
                     break;
             }
         } while (!"w".equals(opcja));
