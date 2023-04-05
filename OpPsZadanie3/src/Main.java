@@ -144,6 +144,7 @@ public class Main {
         }
         /*
         @Override
+<<<<<<<<< Temporary merge branch 1
         public String toString(){
 
             for(int i = 0; i<=pointCell; i++){
@@ -155,6 +156,10 @@ public class Main {
             for(int i = 0; i<=circleCell; i++){
                 circleList[i].toString();
             }
+=========
+        public toString(){
+            //metoda toString
+>>>>>>>>> Temporary merge branch 2
         }
 
          */
@@ -216,16 +221,16 @@ public class Main {
                         System.out.print("Wprowadź y: ");
                         double yA = scanner.nextDouble();
                         Point pointA = new Point(xA, yA);
-
+            
                         System.out.println("Wprowadź koordynaty końca nowego odcinka:");
                         System.out.print("Wprowadź x: ");
                         double xB = scanner.nextDouble();
                         System.out.print("Wprowadź y: ");
                         double yB = scanner.nextDouble();
                         Point pointB = new Point(xB, yB);
-
+            
                         Section newSection = new Section(pointA, pointB);
-
+            
                         System.out.println("Nowy odcinek stworzony: " + newSection.toString());
                         scanner.nextLine();
                             break;
