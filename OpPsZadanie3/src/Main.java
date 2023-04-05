@@ -40,9 +40,11 @@ public class Main {
         private Point pointA;
         private Point pointB;
 
-        public Section() {
-            this.pointA = 0;
-            this.pointB = 0;
+        public Section() {                      //dodano .x i .y do oznaczenia doubli w pointA i pointB
+            this.pointA.x = 0;
+            this.pointA.y = 0;
+            this.pointB.x = 0;
+            this.pointB.y = 0;
         }
 
         public Section(Point pointA, Point pointB) {
@@ -54,7 +56,7 @@ public class Main {
             this.pointA = other.pointA;
             this.pointB = other.pointB;
         }
-        public move(double dx, double dy){
+        public void move(double dx, double dy){         //zmieniono 'public' na 'public void'
             pointA.move(dx, dy);
             pointB.move(dx, dy);
         }
@@ -83,18 +85,21 @@ public class Main {
             this.promien = promien;
         }
 
-        public Circle(Circle other) {
-            this.x = other.x;
-            this.y = other.y;
+        public Circle(Circle other) {               // dodano '.srodek' po 'other'
+            this.srodek.x = other.srodek.x;
+            this.srodek.y = other.srodek.y;
         }
 
         public void move(double dx, double dy) {
             srodek.move(dx, dy);
         }
 
+        public String centerToString(){                                                 //dodano metodę centerToString, uzupełniającą toString
+            return "x:" + this.srodek.x + " y:" + this.srodek.y;
+        }
         @Override
         public String toString() {
-            return "Koło(śroek=" + srodek + ", Promień=" + promien + ")";
+            return "Koło(środek=" + srodek + ", Promień=" + promien + ")";
         }
 
         public double getArea(){
@@ -104,17 +109,66 @@ public class Main {
 
     public static class Picture {       //klasa picture i jej metody
 
+        public Point pointList[];
+        public Section sectionList[];
+        public Circle circleList[];
+        int pointCell, sectionCell, circleCell=0;
+        public Picture(){
+            this.pointCell = 0;
+            this.sectionCell = 0;
+            this.circleCell = 0;
+        }
+        public void addPoint(Point newPoint){
+            this.pointList[pointCell] = newPoint;
+            pointCell++;
+        }
+        public void addSection(Point newSection){
+            this.pointList[sectionCell] = newSection;
+            sectionCell++;
+        }
+        public void addCircle(Circle newCircle){
+            this.circleList[circleCell] = newCircle;
+            circleCell++;
+        }
         public void move(double dx, double dy){
-            //metoda move
+            for(int i = 0; i<=pointCell; i++){
+                pointList[i].move(dx, dy);
+            }
+            for(int i = 0; i<=sectionCell; i++){
+                sectionList[i].move(dx, dy);
+            }
+            for(int i = 0; i<=circleCell; i++){
+                circleList[i].move(dx, dy);
+            }
         }
-
+        /*
         @Override
-        public toString(){
-            //metoda toString
+        public String toString(){
+
+            for(int i = 0; i<=pointCell; i++){
+                pointList[i].toString();
+            }
+            for(int i = 0; i<=sectionCell; i++){
+                sectionList[i].toString();
+            }
+            for(int i = 0; i<=circleCell; i++){
+                circleList[i].toString();
+            }
         }
 
-        public void getArea(){
-            //metoda getArea
+         */
+        public double getArea(){
+            double areaSum = 0;
+            for(int i = 0; i<=pointCell; i++){
+                areaSum += pointList[i].getArea();
+            }
+            for(int i = 0; i<=sectionCell; i++){
+                areaSum += sectionList[i].getArea();
+            }
+            for(int i = 0; i<=circleCell; i++){
+                areaSum += circleList[i].getArea();
+            }
+            return areaSum;
         }
     }
 

@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76093520-6e3b-431d-b792-e8b232afb0a9" name="Changes" comment="Commitment4Life" />
+    <list default="true" id="76093520-6e3b-431d-b792-e8b232afb0a9" name="Changes" comment="Bugfix całości poza metodą toString() w Picture" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/mainclone2" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test_branch" />
+        <entry key="$PROJECT_DIR$" value="picture2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,12 +29,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Studia/Programowanie Obiektowe/PS 3/Trzeci/untitled&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,7 +52,28 @@
       <option name="project" value="LOCAL" />
       <updated>1680550702362</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Picture zostało zmergowane z mainem, oczekuje na integrację">
+      <created>1680636498698</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680636498698</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Poprawiono większość błędów z picture2">
+      <created>1680683929089</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680683929090</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Bugfix całości poza metodą toString() w Picture">
+      <created>1680701389010</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680701389010</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -64,6 +89,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commitment4Life" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commitment4Life" />
+    <MESSAGE value="Picture zostało zmergowane z mainem, oczekuje na integrację" />
+    <MESSAGE value="Poprawiono większość błędów z picture2" />
+    <MESSAGE value="Bugfix całości poza metodą toString() w Picture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix całości poza metodą toString() w Picture" />
   </component>
 </project>
