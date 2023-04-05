@@ -113,8 +113,13 @@ public class Main {
         public Point pointList[];
         public Section sectionList[];
         public Circle circleList[];
+
         int pointCell, sectionCell, circleCell=0;
-        public Picture(){
+        public Picture(Point pointList[], Section sectionList[], Circle circleList[]){
+            this.pointList = pointList;
+            this.sectionList = sectionList;
+            this.circleList = circleList;
+
             this.pointCell = 0;
             this.sectionCell = 0;
             this.circleCell = 0;
@@ -142,27 +147,22 @@ public class Main {
                 circleList[i].move(dx, dy);
             }
         }
-        /*
-        @Override
-<<<<<<<<< Temporary merge branch 1
-        public String toString(){
 
-            for(int i = 0; i<=pointCell; i++){
-                pointList[i].toString();
+        @Override
+        public String toString() {
+            String stringOut = null;
+            for (int i = 0; i <= pointCell; i++) {
+                stringOut += pointList[i].toString();
             }
-            for(int i = 0; i<=sectionCell; i++){
-                sectionList[i].toString();
+            for (int i = 0; i <= sectionCell; i++) {
+                stringOut += sectionList[i].toString();
             }
-            for(int i = 0; i<=circleCell; i++){
-                circleList[i].toString();
+            for (int i = 0; i <= circleCell; i++) {
+                stringOut += circleList[i].toString();
             }
-=========
-        public toString(){
-            //metoda toString
->>>>>>>>> Temporary merge branch 2
+            return stringOut;
         }
 
-         */
         public double getArea(){
             double areaSum = 0;
             for(int i = 0; i<=pointCell; i++){
@@ -181,6 +181,12 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Hello Github!");
+
+        //Point testpoint[];
+        //Section testSection[];
+        //Circle testCircle[];
+        //Picture test = new Picture();
+        //System.out.println(test.toString());
 
         Scanner scanner = new Scanner(System.in);
         String opcja;
@@ -205,50 +211,50 @@ public class Main {
                     switch (opcja) {
 
                         case "1":
-                        System.out.println("Wprowadź koordynat x:");        //Tworzenie Point
-                        double x = scanner.nextDouble();
-                        System.out.println("Wprowadź koordynat y:");
-                        double y = scanner.nextDouble();
-                        Point newPoint = new Point(x,y);
-                        System.out.println("Dodano punkt "+newPoint.toString());
-                        scanner.nextLine();
+                            System.out.println("Wprowadź koordynat x:");        //Tworzenie Point
+                            double x = scanner.nextDouble();
+                            System.out.println("Wprowadź koordynat y:");
+                            double y = scanner.nextDouble();
+                            Point newPoint = new Point(x,y);
+                            System.out.println("Dodano punkt "+newPoint.toString());
+                            scanner.nextLine();
                             break;
 
                         case "2":
-                        System.out.println("Wprowadź koordynaty początku nowego odcinka:");     //Tworzenie Section
-                        System.out.print("Wprowadź x: ");
-                        double xA = scanner.nextDouble();
-                        System.out.print("Wprowadź y: ");
-                        double yA = scanner.nextDouble();
-                        Point pointA = new Point(xA, yA);
-            
-                        System.out.println("Wprowadź koordynaty końca nowego odcinka:");
-                        System.out.print("Wprowadź x: ");
-                        double xB = scanner.nextDouble();
-                        System.out.print("Wprowadź y: ");
-                        double yB = scanner.nextDouble();
-                        Point pointB = new Point(xB, yB);
-            
-                        Section newSection = new Section(pointA, pointB);
-            
-                        System.out.println("Nowy odcinek stworzony: " + newSection.toString());
-                        scanner.nextLine();
+                            System.out.println("Wprowadź koordynaty początku nowego odcinka:");     //Tworzenie Section
+                            System.out.print("Wprowadź x: ");
+                            double xA = scanner.nextDouble();
+                            System.out.print("Wprowadź y: ");
+                            double yA = scanner.nextDouble();
+                            Point pointA = new Point(xA, yA);
+
+                            System.out.println("Wprowadź koordynaty końca nowego odcinka:");
+                            System.out.print("Wprowadź x: ");
+                            double xB = scanner.nextDouble();
+                            System.out.print("Wprowadź y: ");
+                            double yB = scanner.nextDouble();
+                            Point pointB = new Point(xB, yB);
+
+                            Section newSection = new Section(pointA, pointB);
+
+                            System.out.println("Nowy odcinek stworzony: " + newSection.toString());
+                            scanner.nextLine();
                             break;
 
                         case "3":
-                        System.out.println("Wprowadź koordynaty środka nowego koła:");      //Tworzenie Circle
-                        System.out.print("Wprowadź x: ");
-                        double xKoło = scanner.nextDouble();
-                        System.out.print("Wprowadź y: ");
-                        double yKoło = scanner.nextDouble();
-                        Point srodek = new Point(xKoło, yKoło);
-                        System.out.print("Wprowadź promień: ");
-                        double promien = scanner.nextDouble();
+                            System.out.println("Wprowadź koordynaty środka nowego koła:");      //Tworzenie Circle
+                            System.out.print("Wprowadź x: ");
+                            double xKoło = scanner.nextDouble();
+                            System.out.print("Wprowadź y: ");
+                            double yKoło = scanner.nextDouble();
+                            Point srodek = new Point(xKoło, yKoło);
+                            System.out.print("Wprowadź promień: ");
+                            double promien = scanner.nextDouble();
 
-                        Circle newCircle = new Circle(srodek, promien);
+                            Circle newCircle = new Circle(srodek, promien);
 
-                        System.out.println("Nowe koło stworzone: " + newCircle.toString());
-                        scanner.nextLine();
+                            System.out.println("Nowe koło stworzone: " + newCircle.toString());
+                            scanner.nextLine();
                             break;
                     }
                     break;
