@@ -40,9 +40,11 @@ public class Main {
         private Point pointA;      // int na Point
         private Point pointB;      // int na Point
 
-        public Section() {
-            this.pointA = 0;
-            this.pointB = 0;
+        public Section() {                      //dodano .x i .y do oznaczenia doubli w pointA i pointB
+            this.pointA.x = 0;
+            this.pointA.y = 0;
+            this.pointB.x = 0;
+            this.pointB.y = 0;
         }
 
         public Section(Point pointA, Point pointB) {      // int na Point
@@ -54,7 +56,7 @@ public class Main {
             this.pointA = other.pointA;
             this.pointB = other.pointB;
         }
-        public move(double dx, double dy){
+        public void move(double dx, double dy){         //zmieniono 'public' na 'public void'
             pointA.move(dx, dy);
             pointB.move(dx, dy);
         }
@@ -74,7 +76,8 @@ public class Main {
         private double promien;
 
         public Circle() {
-            this.srodek = 0;
+            this.srodek.x = 0;              // dodano .x i .y do this.srodek
+            this.srodek.y = 0;
             this.promien = 0;
         }
 
@@ -83,18 +86,21 @@ public class Main {
             this.promien = promien;
         }
 
-        public Circle(Circle other) {
-            this.x = other.x;
-            this.y = other.y;
+        public Circle(Circle other) {               // dodano '.srodek' po 'other'
+            this.srodek.x = other.srodek.x;
+            this.srodek.y = other.srodek.y;
         }
 
         public void move(double dx, double dy) {
             srodek.move(dx, dy);
         }
 
+        public String centerToString(){                                                 //dodano metodę centerToString, uzupełniającą toString
+            return "x:" + this.srodek.x + " y:" + this.srodek.y;
+        }
         @Override
         public String toString() {
-            return "Circle(center=" + center + ", radius=" + radius + ")";
+            return "Circle(center= " + centerToString() + ", radius = " + this.promien + ")";           //dodano centerToString() zamiast 'center' oraz 'this.' przed promien
         }
 
         public double getArea(){
@@ -139,7 +145,7 @@ public class Main {
             }
         }
         @Override
-        public String toString(){
+        public  String toString(){
             for(int i = 0; i<=pointCell; i++){
                 pointList[i].toString();
             }
