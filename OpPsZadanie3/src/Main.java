@@ -3,16 +3,16 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static class Point {
-        private double x;       // int na double
-        private double y;       // int na double
+    public static class Point {     // Klasa Point i jej metody
+        private double x;
+        private double y;
 
         public Point() {
-            this.x = 0;
-            this.y = 0;
+            this.x = 0.00;
+            this.y = 0.00;
         }
 
-        public Point(double x, double y) {      // int na double
+        public Point(double x, double y) {
             this.x = x;
             this.y = y;
         }
@@ -36,16 +36,16 @@ public class Main {
         }
     }
 
-    public static class Section {
-        private Point pointA;      // int na Point
-        private Point pointB;      // int na Point
+    public static class Section {       // Klasa odcinek i jej metody
+        private Point pointA;
+        private Point pointB;
 
         public Section() {
             this.pointA = 0;
             this.pointB = 0;
         }
 
-        public Section(Point pointA, Point pointB) {      // int na Point
+        public Section(Point pointA, Point pointB) {
             this.pointA = pointA;
             this.pointB = pointB;
         }
@@ -68,9 +68,9 @@ public class Main {
         }
     }
 
-    public static class Circle {
+    public static class Circle {        // klasa koło i jej metody
 
-        private Point srodek;   // int na Point
+        private Point srodek;
         private double promien;
 
         public Circle() {
@@ -102,14 +102,14 @@ public class Main {
         }
     }
 
-    public static class Picture {
+    public static class Picture {       //klasa picture i jej metody
 
         public void move(double dx, double dy){
             //metoda move
         }
 
         @Override
-        public void toString(){
+        public toString(){
             //metoda toString
         }
 
@@ -144,8 +144,12 @@ public class Main {
                     }
                     switch (opcja) {
                         case "1":
-                            //dodaj punkt
-                            break;
+                        System.out.println("Wprowadź koordynat x:");
+                        double x = scanner.nextDouble();
+                        System.out.println("Wprowadź koordynat y:");
+                        double y = scanner.nextDouble();
+                        Point newPoint = new Point(x,y);
+                        System.out.println("Dodano punkt "+newPoint.toString());
                         case "2":
                             //dodaj odcinek
                             break;
