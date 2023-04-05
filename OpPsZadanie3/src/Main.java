@@ -142,6 +142,7 @@ public class Main {
                 circleList[i].move(dx, dy);
             }
         }
+        /*
         @Override
         public String toString(){
 
@@ -155,6 +156,8 @@ public class Main {
                 circleList[i].toString();
             }
         }
+
+         */
         public double getArea(){
             double areaSum = 0;
             for(int i = 0; i<=pointCell; i++){
