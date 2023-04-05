@@ -7,4 +7,4 @@ Makulewski > Klasa Picture zawierająca 3 kolekcje (listy lub tablice) obiektów
 
 Stworzyć metody getString, getArea, Move dla klasy Picture
 
-połączyć backend i frontend (podpiąć funkcje aplikacji do menu użytkownika)
+Kozłowski > połączyć backend i frontend (podpiąć funkcje aplikacji do menu użytkownika)
