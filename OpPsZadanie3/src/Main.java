@@ -108,8 +108,6 @@ public class Main {
         }
     }
 
-    //Klasa Picture zawierająca 3 kolekcje (listy lub tablice) obiektów 1,2,3
-    // oraz metody umożliwiające dodawanie nowych obiektów do kolekcji.
     public static class Picture {
 
         public Point pointList[];
@@ -129,11 +127,11 @@ public class Main {
             this.pointList[sectionCell] = newSection;
             sectionCell++;
         }
-        public void addCircle(Point newCircle){
+        public void addCircle(Circle newCircle){
             this.circleList[circleCell] = newCircle;
             circleCell++;
         }
-        public Picture move(double dx, double dy){
+        public void move(double dx, double dy){
             for(int i = 0; i<=pointCell; i++){
                 pointList[i].move(dx, dy);
             }
@@ -145,7 +143,8 @@ public class Main {
             }
         }
         @Override
-        public  String toString(){
+        public String toString(){
+
             for(int i = 0; i<=pointCell; i++){
                 pointList[i].toString();
             }
@@ -159,13 +158,13 @@ public class Main {
         public double getArea(){
             double areaSum = 0;
             for(int i = 0; i<=pointCell; i++){
-                areaSum += pointList[i];
+                areaSum += pointList[i].getArea();
             }
             for(int i = 0; i<=sectionCell; i++){
-                areaSum += sectionList[i];
+                areaSum += sectionList[i].getArea();
             }
             for(int i = 0; i<=circleCell; i++){
-                areaSum += circleList[i];
+                areaSum += circleList[i].getArea();
             }
             return areaSum;
         }
