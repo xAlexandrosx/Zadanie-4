@@ -1,9 +1,10 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
 
-    public static class Point {     // Klasa Point i jej metody
+    public static class Point {
         private double x;
         private double y;
 
@@ -28,7 +29,7 @@ public class Main {
 
         @Override
         public String toString(){
-            return "("+x+","+y+")";
+            return "Punkt> x:"+x+", y:"+y+"\n";
         }
 
         public double getArea(){
@@ -36,11 +37,11 @@ public class Main {
         }
     }
 
-    public static class Section {       // Klasa odcinek i jej metody
+    public static class Section {
         private Point pointA;
         private Point pointB;
 
-        public Section() {                      //dodano .x i .y do oznaczenia doubli w pointA i pointB
+        public Section() {
             this.pointA.x = 0;
             this.pointA.y = 0;
             this.pointB.x = 0;
@@ -56,27 +57,27 @@ public class Main {
             this.pointA = other.pointA;
             this.pointB = other.pointB;
         }
-        public void move(double dx, double dy){         //zmieniono 'public' na 'public void'
+        public void move(double dx, double dy){
             pointA.move(dx, dy);
             pointB.move(dx, dy);
         }
 
         @Override
         public String toString(){
-            return pointA+"-"+pointB;
+            return "Odcinek> \n{\n1: "+pointA+"2: "+pointB+"}\n";
         }
         public double getArea(){
             return 0;
         }
     }
 
-    public static class Circle {        // klasa koło i jej metody
+    public static class Circle {
 
         private Point srodek;
         private double promien;
 
         public Circle() {
-            this.srodek.x = 0;              // dodano .x i .y do this.srodek
+            this.srodek.x = 0;
             this.srodek.y = 0;
             this.promien = 0;
         }
@@ -86,7 +87,7 @@ public class Main {
             this.promien = promien;
         }
 
-        public Circle(Circle other) {               // dodano '.srodek' po 'other'
+        public Circle(Circle other) {
             this.srodek.x = other.srodek.x;
             this.srodek.y = other.srodek.y;
         }
@@ -95,12 +96,9 @@ public class Main {
             srodek.move(dx, dy);
         }
 
-        public String centerToString(){                                                 //dodano metodę centerToString, uzupełniającą toString
-            return "x:" + this.srodek.x + " y:" + this.srodek.y;
-        }
         @Override
         public String toString() {
-            return "Circle(center= " + centerToString() + ", radius = " + this.promien + ")";           //dodano centerToString() zamiast 'center' oraz 'this.' przed promien
+            return "Koło>\n{\nŚrodek = " + centerToString() + "\nPromiń = " + this.promien + "\n}\n";
         }
 
         public double getArea(){
@@ -108,164 +106,157 @@ public class Main {
         }
     }
 
-    public static class Picture {       //klasa picture i jej metody
+    public static class Picture {
+        private ArrayList<Point> points;
+        private ArrayList<Section> sections;
+        private ArrayList<Circle> circles;
 
-        public Point pointList[];
-        public Section sectionList[];
-        public Circle circleList[];
+        public Picture() {
+            this.points = new ArrayList<>();
+            this.sections = new ArrayList<>();
+            this.circles = new ArrayList<>();
+        }
 
-        int pointCell, sectionCell, circleCell=0;
-        public Picture(Point pointList[], Section sectionList[], Circle circleList[]){
-            this.pointList = pointList;
-            this.sectionList = sectionList;
-            this.circleList = circleList;
+        public void addPoint(Point p) {
+            this.points.add(p);
+        }
 
-            this.pointCell = 0;
-            this.sectionCell = 0;
-            this.circleCell = 0;
+        public void addSection(Section s) {
+            this.sections.add(s);
         }
-        public void addPoint(Point newPoint){
-            this.pointList[pointCell] = newPoint;
-            pointCell++;
+
+        public void addCircle(Circle c) {
+            this.circles.add(c);
         }
-        public void addSection(Point newSection){
-            this.pointList[sectionCell] = newSection;
-            sectionCell++;
-        }
-        public void addCircle(Circle newCircle){
-            this.circleList[circleCell] = newCircle;
-            circleCell++;
-        }
-        public void move(double dx, double dy){
-            for(int i = 0; i<=pointCell; i++){
-                pointList[i].move(dx, dy);
+
+        public void move(double dx, double dy) {
+            for (Point p : points) {
+                p.move(dx, dy);
             }
-            for(int i = 0; i<=sectionCell; i++){
-                sectionList[i].move(dx, dy);
+            for (Section s : sections) {
+                s.move(dx, dy);
             }
-            for(int i = 0; i<=circleCell; i++){
-                circleList[i].move(dx, dy);
+            for (Circle c : circles) {
+                c.move(dx, dy);
             }
+        }
+
+        public double getArea() {
+            double area = 0;
+            for (Point p : points) {
+                area += p.getArea();
+            }
+            for (Section s : sections) {
+                area += s.getArea();
+            }
+            for (Circle c : circles) {
+                area += c.getArea();
+            }
+            return area;
         }
 
         @Override
         public String toString() {
-            String stringOut = null;
-            for (int i = 0; i <= pointCell; i++) {
-                stringOut += pointList[i].toString();
-            }
-            for (int i = 0; i <= sectionCell; i++) {
-                stringOut += sectionList[i].toString();
-            }
-            for (int i = 0; i <= circleCell; i++) {
-                stringOut += circleList[i].toString();
-            }
-            return stringOut;
-        }
+            StringBuilder sb = new StringBuilder();
+            sb.append("Obraz:\n");
 
-        public double getArea(){
-            double areaSum = 0;
-            for(int i = 0; i<=pointCell; i++){
-                areaSum += pointList[i].getArea();
+            sb.append("Punkty:\n");
+            for (Point p : points) {
+                sb.append(p.toString());
             }
-            for(int i = 0; i<=sectionCell; i++){
-                areaSum += sectionList[i].getArea();
+
+            sb.append("Odcinki:\n");
+            for (Section s : sections) {
+                sb.append(s.toString());
             }
-            for(int i = 0; i<=circleCell; i++){
-                areaSum += circleList[i].getArea();
+
+            sb.append("Koła:\n");
+            for (Circle c : circles) {
+                sb.append(c.toString());
             }
-            return areaSum;
+
+            return sb.toString();
         }
     }
-
     public static void main(String[] args) {
-
-        System.out.println("Hello Github!");
-
-        //Point testpoint[];
-        //Section testSection[];
-        //Circle testCircle[];
-        //Picture test = new Picture();
-        //System.out.println(test.toString());
-
         Scanner scanner = new Scanner(System.in);
         String opcja;
 
+        Picture picture = new Picture();
+
         do {
             opcja = "";
-            System.out.println("1 Dodaj do obrazu\n2 Wyświetl Obraz\n3 Przesuń Obraz\n4 Wyświetl Sumę Pól\nw Wyjdź\nWybierz>");
-            try {
-                opcja = scanner.nextLine();
-            } catch (InputMismatchException e) {
-                System.out.println("Brak Opcji");
-            }
+            System.out.println("1. Dodaj do obrazu\n2. Wyświetl Obraz\n3. Przesuń Obraz\n4. Wyświetl Sumę Pól\nw Wyjdź\nWybierz>");
+            opcja = scanner.nextLine();
             switch (opcja) {
                 case "1":
                     opcja = "";
                     System.out.println("1 Punkt\n2 Odcinek\n3 Okrąg\nWybierz>");
-                    try {
-                        opcja = scanner.nextLine();
-                    } catch (InputMismatchException e) {
-                        System.out.println("Brak Opcji");
-                    }
+                    opcja = scanner.nextLine();
                     switch (opcja) {
 
                         case "1":
-                            System.out.println("Wprowadź koordynat x:");        //Tworzenie Point
+                            System.out.println("Wprowadź koordynat x:");
                             double x = scanner.nextDouble();
                             System.out.println("Wprowadź koordynat y:");
                             double y = scanner.nextDouble();
-                            Point newPoint = new Point(x,y);
-                            System.out.println("Dodano punkt "+newPoint.toString());
+
+                            Point p = new Point(x, y);
+                            picture.addPoint(p);
                             scanner.nextLine();
                             break;
 
                         case "2":
-                            System.out.println("Wprowadź koordynaty początku nowego odcinka:");     //Tworzenie Section
+                            System.out.println("Wprowadź koordynaty początku nowego odcinka:");
                             System.out.print("Wprowadź x: ");
                             double xA = scanner.nextDouble();
                             System.out.print("Wprowadź y: ");
                             double yA = scanner.nextDouble();
-                            Point pointA = new Point(xA, yA);
 
                             System.out.println("Wprowadź koordynaty końca nowego odcinka:");
                             System.out.print("Wprowadź x: ");
                             double xB = scanner.nextDouble();
                             System.out.print("Wprowadź y: ");
                             double yB = scanner.nextDouble();
-                            Point pointB = new Point(xB, yB);
+                            Point p1 = new Point(xA, yA);
+                            Point p2 = new Point(xB, yB);
 
-                            Section newSection = new Section(pointA, pointB);
-
-                            System.out.println("Nowy odcinek stworzony: " + newSection.toString());
+                            Section s = new Section(p1, p2);
+                            picture.addSection(s);
+                            System.out.println("Nowy odcinek stworzony: " + s.toString());
                             scanner.nextLine();
                             break;
 
                         case "3":
-                            System.out.println("Wprowadź koordynaty środka nowego koła:");      //Tworzenie Circle
+                            System.out.println("Wprowadź koordynaty środka nowego koła:");
                             System.out.print("Wprowadź x: ");
-                            double xKoło = scanner.nextDouble();
+                            double xKolo = scanner.nextDouble();
                             System.out.print("Wprowadź y: ");
-                            double yKoło = scanner.nextDouble();
-                            Point srodek = new Point(xKoło, yKoło);
+                            double yKolo = scanner.nextDouble();
                             System.out.print("Wprowadź promień: ");
                             double promien = scanner.nextDouble();
 
-                            Circle newCircle = new Circle(srodek, promien);
-
-                            System.out.println("Nowe koło stworzone: " + newCircle.toString());
+                            Point k = new Point(xKolo, yKolo);
+                            Circle c = new Circle(k, promien);
+                            picture.addCircle(c);
+                            System.out.println("Nowe koło stworzone: " + c.toString());
                             scanner.nextLine();
                             break;
                     }
                     break;
                 case "2":
-                    //Wyświetl obraz
+                    System.out.println(picture.toString());
                     break;
                 case "3":
-                    //przesuń obraz
+                    System.out.print("Wprowadź dx: ");
+                    double dx = scanner.nextDouble();
+                    System.out.print("Wprowadź dy: ");
+                    double dy = scanner.nextDouble();
+                    picture.move(dx, dy);
                     break;
                 case "4":
-
+                    double area = picture.getArea();
+                    System.out.println("Suma pól: " + area);
                     break;
             }
         } while (!"w".equals(opcja));
