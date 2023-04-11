@@ -19,10 +19,9 @@ StandarizedPicture - pozwala na dodanie obiektów graficznych z etykietami skła
 
 W implementacji UniquePicture i StandarizedPicture wykorzystaj  poniższą metodę add odziedziczoną z klasy bazowej - w klasach potomnych nadpisz jedynie metodę 
 checkLabel
-public boolean add(Figure fig) {
-    if (checkLabel(fig)) {
-      addImpl(fig); // dodaje figurę do list lub tablicy
+public boolean add(Figure fig) {if (checkLabel(fig)) {
+    addImpl(fig); // dodaje figurę do list lub tablicy
     return true;
     }
     return false;
-}
+    }
