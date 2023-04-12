@@ -39,6 +39,22 @@ public class Main {
 
     }
 
+    public abstract class Picture{
+        public boolean add(Figure fig){
+            if (checkLabel(fig)){
+                addImpl(fig);
+            }
+        }
+    }
+
+    public class UniquePicture extends Picture{
+
+    }
+
+    public class StandarizedPicture extends Picture{
+
+    }
+
     public static void main(String[]args){
 
     }
