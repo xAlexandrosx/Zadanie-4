@@ -98,7 +98,7 @@ public class Main {
 
         @Override
         public String toString() {
-            return "Koło>\n{\nŚrodek = " + centerToString() + "\nPromiń = " + this.promien + "\n}\n";
+            return "Koło>\n{\nŚrodek = " + this.srodek + "\nPromień = " + this.promien + "\n}\n";
         }
 
         @Override
@@ -131,7 +131,7 @@ public class Main {
         public double getArea(){
             double area = 0.00;
             for (Shape s : elements){
-                area+=s.getArea();
+                area += s.getArea();
             }
             return area;
         }
