@@ -3,9 +3,9 @@ Programowanie obiektowe PS
 
 Zmodyfikuj zadanie z poprzednich zajęć:
 
-korzystając z techniki dziedziczenia dodaj do klas reprezentujących obiekty graficzne (punkty, linie, ....) pole String label, które pozwala na przypisanie etykiety tekstowej (stwórz osobną klasę Figure),
+Olek >> korzystając z techniki dziedziczenia dodaj do klas reprezentujących obiekty graficzne (punkty, linie, ....) pole String label, które pozwala na przypisanie etykiety tekstowej (stwórz osobną klasę Figure),
 
-zmodyfikuj implementację metod: toString, move, oraz getArea w klasie Picture, tak aby wykorzystywały mechanizm polimorfizmu
+zmodyfikuj implementację metod: toString, move, oraz getArea w klasie Picture, tak aby wykorzystywały mechanizm polimorfizmu //Olek ???
 
 wśród stworzonych wybierz i zamień wybrana klasę konkretną na klasę abstrakcyjną
 
