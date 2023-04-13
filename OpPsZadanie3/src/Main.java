@@ -6,20 +6,20 @@ public class Main {
     
     public static abstract class Shape{
 
-        // String label;
-        // void setLabel(String label){
-        //     this.label = label;                  Na razie nie używane
-        // }
-        // String getLabel(){
-        //     return label;
-        // }
+        String label;
+        void setLabel(String label){
+            this.label = label;
+        }
+        String getLabel(){
+            return label;
+        }
         
         double getArea(){
             return 0;
         }
 
         void move(double dx, double dy){
-        };
+        }
     }
     public static class Point extends Shape{
         private double x;
@@ -28,11 +28,19 @@ public class Main {
         public Point() {
             this.x = 0.00;
             this.y = 0.00;
+            this.label = "";
         }
 
         public Point(double x, double y) {
             this.x = x;
             this.y = y;
+            this.label = "";
+        }
+
+        public Point(double x, double y, String label) {
+            this.x = x;
+            this.y = y;
+            this.label = label;
         }
 
         @Override
@@ -43,10 +51,13 @@ public class Main {
 
         @Override
         public String toString(){
-            return "Punkt> x:"+x+", y:"+y+"\n";
+            if(label==""){
+                return "Punkt> x:"+x+", y:"+y+"\n";
+            }
+            else{
+                return "Punkt> x:"+x+", y:"+y+"\nLabel:"+label+"\n";
+            }
         }
-
-        // String label;
     }
 
     public static class Section extends Shape{
@@ -56,11 +67,19 @@ public class Main {
         public Section() {
             this.pointA = new Point();
             this.pointB = new Point();
+            this.label = "";
         }
 
         public Section(Point pointA, Point pointB) {
             this.pointA = pointA;
             this.pointB = pointB;
+            this.label = "";
+        }
+
+        public Section(Point pointA, Point pointB, String label) {
+            this.pointA = pointA;
+            this.pointB = pointB;
+            this.label = label;
         }
 
         @Override
@@ -71,10 +90,13 @@ public class Main {
 
         @Override
         public String toString(){
-            return "Odcinek> \n{\n1: "+pointA+"2: "+pointB+"}\n";
+            if(label == ""){
+                return "Odcinek> \n{\n1: "+pointA+"2: "+pointB+"}\n";
+            }
+            else{
+                return "Odcinek> \n{\n1: "+pointA+"2: "+pointB+"}\nLabel: "+label+"\n";
+            }
         }
-
-        // String label;
     }
 
     public static class Circle extends Shape{
@@ -84,11 +106,19 @@ public class Main {
         public Circle() {
             this.srodek = new Point();
             this.promien = 1.0;
+            this.label = "";
         }
 
         public Circle(Point srodek, double promien) {
             this.srodek = srodek;
             this.promien = promien;
+            this.label = "";
+        }
+
+        public Circle(Point srodek, double promien, String label) {
+            this.srodek = srodek;
+            this.promien = promien;
+            this.label = label;
         }
 
         @Override
@@ -98,15 +128,18 @@ public class Main {
 
         @Override
         public String toString() {
-            return "Koło>\n{\nŚrodek = " + this.srodek + "\nPromień = " + this.promien + "\n}\n";
+            if(label==""){
+                return "Koło>\n{\nŚrodek = " + this.srodek + "\nPromień = " + this.promien + "\n}\n";
+            }
+            else{
+                return "Koło>\n{\nŚrodek = " + this.srodek + "\nPromień = " + this.promien + "\nLabel: "+label+"}\n";
+            }
         }
 
         @Override
         public double getArea(){
             return this.promien*this.promien*3.1415;
         }
-
-        //String label
     }
 
     public static class Picture extends Shape{        //zmienić później na abstract
@@ -182,8 +215,11 @@ public class Main {
                             double x = scanner.nextDouble();
                             System.out.println("Wprowadź koordynat y:");
                             double y = scanner.nextDouble();
+                            System.out.println("Dodaj label (opcjonalne, ENTER by pominąć)");
+                            scanner.nextLine();
+                            String labelPoint = scanner.nextLine();
 
-                            Point p = new Point(x, y);
+                            Point p = new Point(x, y, labelPoint);
                             picture.addElement(p);
                             scanner.nextLine();
                             break;
@@ -200,10 +236,13 @@ public class Main {
                             double xB = scanner.nextDouble();
                             System.out.print("Wprowadź y: ");
                             double yB = scanner.nextDouble();
+                            System.out.println("Dodaj label (opcjonalne, ENTER by pominąć)");
+                            scanner.nextLine();
+                            String labelSection = scanner.nextLine();
                             Point p1 = new Point(xA, yA);
                             Point p2 = new Point(xB, yB);
 
-                            Section se = new Section(p1, p2);
+                            Section se = new Section(p1, p2, labelSection);
                             picture.addElement(se);
                             System.out.println("Nowy odcinek stworzony: " + se.toString());
                             scanner.nextLine();
@@ -217,9 +256,12 @@ public class Main {
                             double yKolo = scanner.nextDouble();
                             System.out.print("Wprowadź promień: ");
                             double promien = scanner.nextDouble();
+                            System.out.println("Dodaj label (opcjonalne, ENTER by pominąć)");
+                            scanner.nextLine();
+                            String labelCircle = scanner.nextLine();
 
                             Point k = new Point(xKolo, yKolo);
-                            Circle c = new Circle(k, promien);
+                            Circle c = new Circle(k, promien, labelCircle);
                             picture.addElement(c);
                             System.out.println("Nowe koło stworzone: " + c.toString());
                             scanner.nextLine();
