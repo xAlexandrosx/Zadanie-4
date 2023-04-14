@@ -142,17 +142,15 @@ public class Main {
         }
     }
 
-    public static class Picture extends Shape{        //zmienić później na abstract
+    public static abstract class Picture extends Shape{
 
-        private ArrayList<Shape> elements;
+        public ArrayList<Shape> elements;
 
         public Picture(){
             this.elements = new ArrayList<>();
         }
 
-        public void addElement(Shape s){
-            this.elements.add(s);
-        }
+        abstract boolean addElement(Shape element);
 
         @Override
         public void move(double dx, double dy) {
@@ -181,9 +179,21 @@ public class Main {
             return sb.toString();
         }
     }
-    // public class UniquePicture extends Picture{
+    public static class UniquePicture extends Picture{
 
-    // }
+        @Override
+        public boolean addElement(Shape element) {
+            for (Shape s : elements) {
+                if (s.getLabel().equals(element.getLabel())) {
+                    System.out.println("Błąd. Taki label już istnieje");
+                    return false;
+                }
+            }
+            elements.add(element);
+            return true;
+        }
+        
+    }
 
     // public class StandarizedPicture extends Picture{         Na razie nie używane
 
@@ -197,7 +207,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String opcja;
 
-        Picture picture = new Picture();
+        UniquePicture picture = new UniquePicture();
 
         do {
             opcja = "";
