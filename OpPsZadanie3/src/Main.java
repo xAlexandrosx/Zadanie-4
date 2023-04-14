@@ -198,19 +198,6 @@ public class Main {
 
 
     import java.util.regex.*;
-/*
-    public class RegexExample {
-        public static void main(String[] args) {
-            String input = "The quick brown fox jumps over the lazy dog";
-            Pattern pattern = Pattern.compile("\\b[a-z]{4}\\b");
-            Matcher matcher = pattern.matcher(input);
-            while (matcher.find()) {
-                System.out.println(matcher.group());
-            }
-        }
-    }
-
- */
 
     public class StandarizedPicture extends Picture{
         public boolean add(Shape element) {
@@ -225,8 +212,6 @@ public class Main {
             return false;
         }
      }
-
-
 
 
 
