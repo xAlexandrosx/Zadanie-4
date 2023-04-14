@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="76093520-6e3b-431d-b792-e8b232afb0a9" name="Changes" comment="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture), oczekuję na zwrotną informację od prowadzącego">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OpPsZadanie3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpPsZadanie3/src/Main.java" afterDir="false" />
     </list>
-    <list default="true" id="76093520-6e3b-431d-b792-e8b232afb0a9" name="Changes" comment="Bugfix całości poza metodą toString() w Picture" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681420913461</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture)">
+      <created>1681513004400</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681513004400</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,6 +110,7 @@
     <MESSAGE value="Poprawiono większość błędów z picture2" />
     <MESSAGE value="Bugfix całości poza metodą toString() w Picture" />
     <MESSAGE value="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture), oczekuję na zwrotną informację od prowadzącego" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture), oczekuję na zwrotną informację od prowadzącego" />
+    <MESSAGE value="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture)" />
   </component>
 </project>

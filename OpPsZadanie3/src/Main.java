@@ -1,6 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class Main {
     
@@ -195,8 +196,34 @@ public class Main {
         
     }
 
+
+    import java.util.regex.*;
+/*
+    public class RegexExample {
+        public static void main(String[] args) {
+            String input = "The quick brown fox jumps over the lazy dog";
+            Pattern pattern = Pattern.compile("\\b[a-z]{4}\\b");
+            Matcher matcher = pattern.matcher(input);
+            while (matcher.find()) {
+                System.out.println(matcher.group());
+            }
+        }
+    }
+
+ */
+
     public class StandarizedPicture extends Picture{
-            //
+        public boolean add(Shape element) {
+            String tag = element.getLabel()
+            Pattern labelPattern = Pattern.compile("^[A-Z][A-Z0-9]*$");         //sprawdzić poprawność kompilacji Pattern
+            Matcher labelMatch = labelPattern.matcher(tag);
+            if (labelMatch.matches()) {
+                elements.add(element);
+                return true;
+            }
+            System.out.println(tag+" zawiera niedozwolone znaki");
+            return false;
+        }
      }
 
 
