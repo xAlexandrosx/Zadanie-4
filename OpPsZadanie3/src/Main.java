@@ -195,9 +195,9 @@ public class Main {
         
     }
 
-    // public class StandarizedPicture extends Picture{         Na razie nie używane
-
-    // }
+    public class StandarizedPicture extends Picture{
+            //
+     }
 
 
 

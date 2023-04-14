@@ -7,6 +7,7 @@
     <list default="true" id="76093520-6e3b-431d-b792-e8b232afb0a9" name="Changes" comment="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture), oczekuję na zwrotną informację od prowadzącego">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <list default="true" id="76093520-6e3b-431d-b792-e8b232afb0a9" name="Changes" comment="Bugfix całości poza metodą toString() w Picture" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
