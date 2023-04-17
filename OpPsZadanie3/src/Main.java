@@ -196,7 +196,7 @@ public class Main {
         
     }
     public static class StandarizedPicture extends Picture{
-        public boolean add(Shape element) {
+        public boolean addElement(Shape element) {
             String tag = element.getLabel();
             Pattern labelPattern = Pattern.compile("^[A-Z][A-Z0-9]*$");         //sprawdzić poprawność kompilacji Pattern
             Matcher labelMatch = labelPattern.matcher(tag);
@@ -308,7 +308,8 @@ public class Main {
                             scanner.nextLine();
                             break;
                         }
-                    }else{
+                    }
+                    else {
                         System.out.println("Błąd. Nie ma takiego obrazu");
                     }
                     break;
@@ -370,12 +371,12 @@ public class Main {
 
 /*
 
-        Zmodyfikuj zadanie z poprzednich zajęć:
+        DONE - Zmodyfikuj zadanie z poprzednich zajęć:
 
         DONE - korzystając z techniki dziedziczenia dodaj do klas reprezentujących obiekty graficzne (punkty, linie, ....) pole String label, które pozwala na przypisanie etykiety tekstowej (stwórz osobną klasę Figure),
         DONE - zmodyfikuj klasę Picture, tak aby wszystkie rodzaje obiektów graficznych były przechowywane w jednej tablicy lub liście.
-        zmodyfikuj implementację metod: toString, move, oraz getArea w klasie Picture, tak aby wykorzystywały mechanizm polimorfizmu
-        wśród stworzonych wybierz i zamień wybrana klasę konkretną na klasę abstrakcyjną
+        DONE - zmodyfikuj implementację metod: toString, move, oraz getArea w klasie Picture, tak aby wykorzystywały mechanizm polimorfizmu
+        DONE - wśród stworzonych wybierz i zamień wybrana klasę konkretną na klasę abstrakcyjną
         DONE - korzystając z dziedziczenia stwórz 2 dodatkowe wersje klasy Picture różniące się wymaganiami odnośnie etykiet (label)
 
         DONE - UniquePicture - pozwala na dodanie obiektów graficznych z unikalnymi etykietami, zwraca true jeśli udało się dodać
