@@ -307,9 +307,7 @@ public class Main {
                             System.out.println("Nowe koło stworzone: " + c.toString());
                             scanner.nextLine();
                             break;
-                        }                       //
-                    }else{                      //
-                        System.out.println("Błąd. Nie ma takiego obrazu");                      //
+                        }
                     }
                     else {
                         System.out.println("Błąd. Nie ma takiego obrazu");
