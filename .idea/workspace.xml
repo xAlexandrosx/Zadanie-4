@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76093520-6e3b-431d-b792-e8b232afb0a9" name="Changes" comment="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture), oczekuję na zwrotną informację od prowadzącego">
+    <list default="true" id="76093520-6e3b-431d-b792-e8b232afb0a9" name="Changes" comment="Bugfix całości poza metodą toString() w Picture">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpPsZadanie3/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/OpPsZadanie3/src/Main.java" afterDir="false" />
     </list>
@@ -32,13 +32,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Studia/Programowanie Obiektowe/PS 3/Trzeci/untitled&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/jimma/Desktop/Zadanie-4"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -76,21 +76,7 @@
       <option name="project" value="LOCAL" />
       <updated>1680701389010</updated>
     </task>
-    <task id="LOCAL-00005" summary="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture), oczekuję na zwrotną informację od prowadzącego">
-      <created>1681420913461</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1681420913461</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture)">
-      <created>1681513004400</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1681513004400</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,8 +95,6 @@
     <MESSAGE value="Picture zostało zmergowane z mainem, oczekuje na integrację" />
     <MESSAGE value="Poprawiono większość błędów z picture2" />
     <MESSAGE value="Bugfix całości poza metodą toString() w Picture" />
-    <MESSAGE value="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture), oczekuję na zwrotną informację od prowadzącego" />
-    <MESSAGE value="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rozpoczęto pracę nad StandardizedPicture (dziedziczy z Picture)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix całości poza metodą toString() w Picture" />
   </component>
 </project>
