@@ -22,6 +22,7 @@ public class Main {
         void move(double dx, double dy){
         }
     }
+    /*
     public static class Point extends Shape{
         private double x;
         private double y;
@@ -49,6 +50,57 @@ public class Main {
         x += dx;
         y += dy;
     }
+
+        @Override
+        public String toString(){
+            if(label==""){
+                return "Punkt> x:"+x+", y:"+y+"\n";
+            }
+            else{
+                return "Punkt> x:"+x+", y:"+y+"\nLabel:"+label+"\n";
+            }
+        }
+    }
+
+     */
+
+    public static abstract class absPoint extends Shape{        //EKSPERYMENTALNY
+
+
+        abstract public void move(double dx, double dy);
+
+
+        abstract public String toString();
+    }
+
+    public static class Point extends absPoint{
+        private double x;
+        private double y;
+
+        public Point() {
+            this.x = 0.00;
+            this.y = 0.00;
+            this.label = "";
+        }
+
+        public Point(double x, double y) {
+            this.x = x;
+            this.y = y;
+            this.label = "";
+        }
+
+        public Point(double x, double y, String label) {
+            this.x = x;
+            this.y = y;
+            this.label = label;
+        }
+        @Override
+        public void move(double dx, double dy) {
+            {
+                x += dx;
+                y += dy;
+            }
+        }
 
         @Override
         public String toString(){
