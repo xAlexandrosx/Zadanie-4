@@ -375,8 +375,8 @@ public class Main {
 
         DONE - korzystając z techniki dziedziczenia dodaj do klas reprezentujących obiekty graficzne (punkty, linie, ....) pole String label, które pozwala na przypisanie etykiety tekstowej (stwórz osobną klasę Figure),
         DONE - zmodyfikuj klasę Picture, tak aby wszystkie rodzaje obiektów graficznych były przechowywane w jednej tablicy lub liście.
-        DONE - zmodyfikuj implementację metod: toString, move, oraz getArea w klasie Picture, tak aby wykorzystywały mechanizm polimorfizmu
-        DONE - wśród stworzonych wybierz i zamień wybrana klasę konkretną na klasę abstrakcyjną
+        zmodyfikuj implementację metod: toString, move, oraz getArea w klasie Picture, tak aby wykorzystywały mechanizm polimorfizmu
+        wśród stworzonych wybierz i zamień wybrana klasę konkretną na klasę abstrakcyjną
         DONE - korzystając z dziedziczenia stwórz 2 dodatkowe wersje klasy Picture różniące się wymaganiami odnośnie etykiet (label)
 
         DONE - UniquePicture - pozwala na dodanie obiektów graficznych z unikalnymi etykietami, zwraca true jeśli udało się dodać
