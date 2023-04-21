@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.regex.*;
 
 public class Main {
-    
+
     public static abstract class Shape{
 
         String label;
@@ -14,7 +14,7 @@ public class Main {
         String getLabel(){
             return label;
         }
-        
+
         double getArea(){
             return 0;
         }
@@ -71,6 +71,8 @@ public class Main {
 
 
         abstract public String toString();
+
+        abstract public double getArea();
     }
 
     public static class Point extends absPoint{
@@ -110,6 +112,10 @@ public class Main {
             else{
                 return "Punkt> x:"+x+", y:"+y+"\nLabel:"+label+"\n";
             }
+        }
+
+        public double getArea(){
+            return 0;
         }
     }
 
@@ -245,7 +251,7 @@ public class Main {
             elements.add(element);
             return true;
         }
-        
+
     }
     public static class StandarizedPicture extends Picture{
         public boolean addElement(Shape element) {
@@ -259,7 +265,7 @@ public class Main {
             System.out.println(tag+" zawiera niedozwolone znaki");
             return false;
         }
-     }
+    }
 
 
 
@@ -285,80 +291,80 @@ public class Main {
                     scanner.nextLine();
                     if(wybierzObraz == 1 || wybierzObraz == 2){
                         opcja = "";
-                    System.out.println("1 Punkt\n2 Odcinek\n3 Okrąg\nWybierz>");
-                    opcja = scanner.nextLine();
-                    switch (opcja) {
+                        System.out.println("1 Punkt\n2 Odcinek\n3 Okrąg\nWybierz>");
+                        opcja = scanner.nextLine();
+                        switch (opcja) {
 
-                        case "1":
-                            System.out.println("Wprowadź koordynat x:");
-                            double x = scanner.nextDouble();
-                            System.out.println("Wprowadź koordynat y:");
-                            double y = scanner.nextDouble();
-                            System.out.println("Dodaj label (opcjonalne, ENTER by pominąć)");
-                            scanner.nextLine();
-                            String labelPoint = scanner.nextLine();
+                            case "1":
+                                System.out.println("Wprowadź koordynat x:");
+                                double x = scanner.nextDouble();
+                                System.out.println("Wprowadź koordynat y:");
+                                double y = scanner.nextDouble();
+                                System.out.println("Dodaj label (opcjonalne, ENTER by pominąć)");
+                                scanner.nextLine();
+                                String labelPoint = scanner.nextLine();
 
-                            Point p = new Point(x, y, labelPoint);
-                            if(wybierzObraz==1){
-                                picture.addElement(p);
-                            }else if(wybierzObraz==2){
-                                StdPicture.addElement(p);
-                            }
-                            wybierzObraz=0;
-                            break;
+                                Point p = new Point(x, y, labelPoint);
+                                if(wybierzObraz==1){
+                                    picture.addElement(p);
+                                }else if(wybierzObraz==2){
+                                    StdPicture.addElement(p);
+                                }
+                                wybierzObraz=0;
+                                break;
 
-                        case "2":
-                            System.out.println("Wprowadź koordynaty początku nowego odcinka:");
-                            System.out.print("Wprowadź x: ");
-                            double xA = scanner.nextDouble();
-                            System.out.print("Wprowadź y: ");
-                            double yA = scanner.nextDouble();
+                            case "2":
+                                System.out.println("Wprowadź koordynaty początku nowego odcinka:");
+                                System.out.print("Wprowadź x: ");
+                                double xA = scanner.nextDouble();
+                                System.out.print("Wprowadź y: ");
+                                double yA = scanner.nextDouble();
 
-                            System.out.println("Wprowadź koordynaty końca nowego odcinka:");
-                            System.out.print("Wprowadź x: ");
-                            double xB = scanner.nextDouble();
-                            System.out.print("Wprowadź y: ");
-                            double yB = scanner.nextDouble();
-                            System.out.println("Dodaj label (opcjonalne, ENTER by pominąć)");
-                            scanner.nextLine();
-                            String labelSection = scanner.nextLine();
-                            Point p1 = new Point(xA, yA);
-                            Point p2 = new Point(xB, yB);
+                                System.out.println("Wprowadź koordynaty końca nowego odcinka:");
+                                System.out.print("Wprowadź x: ");
+                                double xB = scanner.nextDouble();
+                                System.out.print("Wprowadź y: ");
+                                double yB = scanner.nextDouble();
+                                System.out.println("Dodaj label (opcjonalne, ENTER by pominąć)");
+                                scanner.nextLine();
+                                String labelSection = scanner.nextLine();
+                                Point p1 = new Point(xA, yA);
+                                Point p2 = new Point(xB, yB);
 
-                            Section se = new Section(p1, p2, labelSection);
-                            if(wybierzObraz==1){
-                                picture.addElement(se);
-                            }else if(wybierzObraz==2){
-                                StdPicture.addElement(se);
-                            }
-                            wybierzObraz=0;
-                            System.out.println("Nowy odcinek stworzony: " + se.toString());
-                            scanner.nextLine();
-                            break;
+                                Section se = new Section(p1, p2, labelSection);
+                                if(wybierzObraz==1){
+                                    picture.addElement(se);
+                                }else if(wybierzObraz==2){
+                                    StdPicture.addElement(se);
+                                }
+                                wybierzObraz=0;
+                                System.out.println("Nowy odcinek stworzony: " + se.toString());
+                                scanner.nextLine();
+                                break;
 
-                        case "3":
-                            System.out.println("Wprowadź koordynaty środka nowego koła:");
-                            System.out.print("Wprowadź x: ");
-                            double xKolo = scanner.nextDouble();
-                            System.out.print("Wprowadź y: ");
-                            double yKolo = scanner.nextDouble();
-                            System.out.print("Wprowadź promień: ");
-                            double promien = scanner.nextDouble();
-                            System.out.println("Dodaj label (opcjonalne, ENTER by pominąć)");
-                            scanner.nextLine();
-                            String labelCircle = scanner.nextLine();
+                            case "3":
+                                System.out.println("Wprowadź koordynaty środka nowego koła:");
+                                System.out.print("Wprowadź x: ");
+                                double xKolo = scanner.nextDouble();
+                                System.out.print("Wprowadź y: ");
+                                double yKolo = scanner.nextDouble();
+                                System.out.print("Wprowadź promień: ");
+                                double promien = scanner.nextDouble();
+                                System.out.println("Dodaj label (opcjonalne, ENTER by pominąć)");
+                                scanner.nextLine();
+                                String labelCircle = scanner.nextLine();
 
-                            Point k = new Point(xKolo, yKolo);
-                            Circle c = new Circle(k, promien, labelCircle);
-                            if(wybierzObraz==1){
-                                picture.addElement(c);
-                            }else if(wybierzObraz==2){
-                                StdPicture.addElement(c);
-                            }
-                            wybierzObraz=0;
-                            System.out.println("Nowe koło stworzone: " + c.toString());
-                            scanner.nextLine();
-                            break;
+                                Point k = new Point(xKolo, yKolo);
+                                Circle c = new Circle(k, promien, labelCircle);
+                                if(wybierzObraz==1){
+                                    picture.addElement(c);
+                                }else if(wybierzObraz==2){
+                                    StdPicture.addElement(c);
+                                }
+                                wybierzObraz=0;
+                                System.out.println("Nowe koło stworzone: " + c.toString());
+                                scanner.nextLine();
+                                break;
                         }
                     }
                     else {
