@@ -267,22 +267,23 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         String opcja;
-        String wybierzObraz;
+        int wybierzObraz;
 
         UniquePicture picture = new UniquePicture();
         StandarizedPicture StdPicture = new StandarizedPicture();
 
         do {
             opcja = "";
-            wybierzObraz = "";
+            wybierzObraz = 0;
 
             System.out.println("1. Dodaj do obrazu\n2. Wyświetl Obraz\n3. Przesuń Obraz\n4. Wyświetl Sumę Pól\nw Wyjdź\nWybierz>");
             opcja = scanner.nextLine();
             switch (opcja) {
                 case "1":
                     System.out.println("Do którego obrazu chcesz dodać?\n1 UniquePicture\n2 StandarizedPicture\nWybierz>");
-                    wybierzObraz=scanner.nextLine();
-                    if(wybierzObraz == "1" || wybierzObraz =="2"){
+                    wybierzObraz=scanner.nextInt();
+                    scanner.nextLine();
+                    if(wybierzObraz == 1 || wybierzObraz == 2){
                         opcja = "";
                     System.out.println("1 Punkt\n2 Odcinek\n3 Okrąg\nWybierz>");
                     opcja = scanner.nextLine();
@@ -298,13 +299,12 @@ public class Main {
                             String labelPoint = scanner.nextLine();
 
                             Point p = new Point(x, y, labelPoint);
-                            if(wybierzObraz=="1"){
+                            if(wybierzObraz==1){
                                 picture.addElement(p);
-                            }else if(wybierzObraz=="2"){
+                            }else if(wybierzObraz==2){
                                 StdPicture.addElement(p);
                             }
-                            wybierzObraz="";
-                            scanner.nextLine();
+                            wybierzObraz=0;
                             break;
 
                         case "2":
@@ -326,12 +326,12 @@ public class Main {
                             Point p2 = new Point(xB, yB);
 
                             Section se = new Section(p1, p2, labelSection);
-                            if(wybierzObraz=="1"){
+                            if(wybierzObraz==1){
                                 picture.addElement(se);
-                            }else if(wybierzObraz=="2"){
+                            }else if(wybierzObraz==2){
                                 StdPicture.addElement(se);
                             }
-                            wybierzObraz="";
+                            wybierzObraz=0;
                             System.out.println("Nowy odcinek stworzony: " + se.toString());
                             scanner.nextLine();
                             break;
@@ -350,12 +350,12 @@ public class Main {
 
                             Point k = new Point(xKolo, yKolo);
                             Circle c = new Circle(k, promien, labelCircle);
-                            if(wybierzObraz=="1"){
+                            if(wybierzObraz==1){
                                 picture.addElement(c);
-                            }else if(wybierzObraz=="2"){
+                            }else if(wybierzObraz==2){
                                 StdPicture.addElement(c);
                             }
-                            wybierzObraz="";
+                            wybierzObraz=0;
                             System.out.println("Nowe koło stworzone: " + c.toString());
                             scanner.nextLine();
                             break;
@@ -367,32 +367,34 @@ public class Main {
                     break;
                 case "2":
                     System.out.println("Który obraz chcesz wyświetlić?\n1 UniquePicture\n2 StandarizedPicture\nWybierz>");
-                    wybierzObraz = scanner.nextLine();
-                    if(wybierzObraz == "1" || wybierzObraz =="2"){
-                        if(wybierzObraz=="1"){
+                    wybierzObraz = scanner.nextInt();
+                    scanner.nextLine();
+                    if(wybierzObraz == 1 || wybierzObraz ==2){
+                        if(wybierzObraz==1){
                             System.out.println(picture.toString());
-                        }else if(wybierzObraz=="2"){
+                        }else if(wybierzObraz==2){
                             System.out.println(StdPicture.toString());
                         }
-                        wybierzObraz="";
+                        wybierzObraz=0;
                     }else{
                         System.out.println("Błąd. Nie ma takiego obrazu");
                     }
                     break;
                 case "3":
                     System.out.println("Który obraz chcesz przesunąć?\n1 UniquePicture\n2 StandarizedPicture\nWybierz>");
-                    wybierzObraz = scanner.nextLine();
-                    if(wybierzObraz == "1" || wybierzObraz =="2"){
+                    wybierzObraz = scanner.nextInt();
+                    scanner.nextLine();
+                    if(wybierzObraz == 1 || wybierzObraz == 2){
                         System.out.print("Wprowadź dx: ");
                         double dx = scanner.nextDouble();
                         System.out.print("Wprowadź dy: ");
                         double dy = scanner.nextDouble();
-                        if(wybierzObraz=="1"){
+                        if(wybierzObraz==1){
                             picture.move(dx, dy);
-                        }else if(wybierzObraz=="2"){
+                        }else if(wybierzObraz==2){
                             StdPicture.move(dx, dy);
                         }
-                        wybierzObraz="";
+                        wybierzObraz=0;
                     }else{
                         System.out.println("Błąd. Nie ma takiego obrazu");
                     }
@@ -400,14 +402,15 @@ public class Main {
                 case "4":
                     double area=0;
                     System.out.println("Sumę pól którego obrazu chcesz uzyskać?\n1 UniquePicture\n2 StandarizedPicture\nWybierz>");
-                    wybierzObraz = scanner.nextLine();
-                    if(wybierzObraz == "1" || wybierzObraz =="2"){
-                        if(wybierzObraz=="1"){
+                    wybierzObraz = scanner.nextInt();
+                    scanner.nextLine();
+                    if(wybierzObraz == 1 || wybierzObraz ==2){
+                        if(wybierzObraz==1){
                             area = picture.getArea();
-                        }else if(wybierzObraz=="2"){
+                        }else if(wybierzObraz==2){
                             area = StdPicture.getArea();
                         }
-                        wybierzObraz="";
+                        wybierzObraz=0;
                         System.out.println("Suma pól: " + area);
                     }else{
                         System.out.println("Błąd. Nie ma takiego obrazu");
